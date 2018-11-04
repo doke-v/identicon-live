@@ -50,7 +50,7 @@ class App extends Component {
         <div className="header">
         <h2>react-identicons</h2>
         React component for generating identicons
-        <div className="version">v1.1.2</div>
+        <div className="version">v1.1.3</div>
         </div>
         
         <div className="controls">
