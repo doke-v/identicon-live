@@ -47,7 +47,7 @@ class App extends Component {
         <span>Padding</span>
         <input type="range" min="0" max="10" value={this.state.padding} onChange={(evt)=>this.paddingChanged(evt)}/>
         <span>Size</span>
-        <input type="range" min="100" max="400" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
+        <input type="range" min="100" max="300" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
         <span>Background</span>
         <TwitterPicker color={ this.state.bg } onChangeComplete={ this.bgChanged.bind(this) }/>
         <span>Foreground</span>

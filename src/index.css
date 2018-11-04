@@ -62,3 +62,26 @@ code {
 .wrapper > div {
   padding: 1em;
 }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .wrapper {
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "controls controls"
+  }
+  .main {
+    height: initial;
+  }
+  .controls {
+    margin: 1em;
+  }
+  .github {
+    padding: 1em;
+  }
+  .id {
+    display: flex;
+    margin: auto;
+  }
+  }
