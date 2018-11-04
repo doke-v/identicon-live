@@ -15,7 +15,7 @@ class Input extends Component {
   }
   render() {
     return (
-      <input className = "input" type="text" value ={this.state.text} onKeyUp={this.submitted.bind(this)} onChange={this.changed.bind(this)}></input>
+      <input className = "input" type="text" value ={this.props.value} onKeyUp={this.submitted.bind(this)} onChange={this.changed.bind(this)}></input>
     );
   }
 }

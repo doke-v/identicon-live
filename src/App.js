@@ -37,10 +37,6 @@ class App extends Component {
     this.setState({string: "", padding: 1, size: 200, fg: null, bg: "#FFFFFF", palette: [], palettechoice: 0})
     
   }
-  
-  getColor(fg){
-    this.setState({fg})
-  }
   render() {
     return (
     <div className="wrapper">
@@ -52,7 +48,7 @@ class App extends Component {
         
         <div className="controls">
         <span>Text</span>
-        <Input callback={this.inputChanged.bind(this)}/>
+        <Input value={this.state.string} callback={this.inputChanged.bind(this)}/>
         <span>Padding</span>
         <input type="range" min="0" max="10" value={this.state.padding} onChange={(evt)=>this.paddingChanged(evt)}/>
         <span>Size</span>
@@ -74,7 +70,7 @@ class App extends Component {
      
         </div>
         <div className="main">
-          <Identicon getColor = {this.getColor.bind(this)} palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
+          <Identicon palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
         </div>
     </div>
     );
