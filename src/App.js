@@ -33,6 +33,10 @@ class App extends Component {
       this.setState({palette: palettes[this.state.palettechoice], fg: ""})
     });
   } 
+  reset(){
+    this.setState({string: "", padding: 1, size: 200, fg: null, bg: "#FFFFFF", palette: [], palettechoice: 0})
+    
+  }
   
   getColor(fg){
     this.setState({fg})
@@ -65,6 +69,9 @@ class App extends Component {
           <option value={3}>Blue</option>
           <option value={4}>Grayscale</option>
        </select>
+       <span>Reset</span>
+       <button type="button" onClick={this.reset.bind(this)}>Reset!</button>
+     
         </div>
         <div className="main">
           <Identicon getColor = {this.getColor.bind(this)} palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
