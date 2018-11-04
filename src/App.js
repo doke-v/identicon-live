@@ -5,7 +5,7 @@ import {TwitterPicker } from 'react-color';
 
 
 class App extends Component {
-  state = {padding: 1, size: 200, bg: "transparent", fg: ""}
+  state = {padding: 1, size: 200, fg: null}
   inputChanged(string){
     this.setState({string})
   }
@@ -19,10 +19,12 @@ class App extends Component {
   }
 
   bgChanged(color){
+    console.log(color)
     let bg = color.hex
     this.setState({bg})
   } 
   fgChanged(color){
+    console.log(color)
     let fg = color.hex
     this.setState({fg, palettechoice: 0, palette: palettes[0]})
   } 
@@ -31,14 +33,17 @@ class App extends Component {
       this.setState({palette: palettes[this.state.palettechoice], fg: ""})
     });
   } 
-
+  
+  getColor(fg){
+    this.setState({fg})
+  }
   render() {
     return (
     <div className="wrapper">
         <div className="header">
         <h2>react-identicons</h2>
         React component for generating identicons
-        <div className="github">v1.1.1</div>
+        <div className="version">v1.1.2</div>
         </div>
         
         <div className="controls">
@@ -49,9 +54,9 @@ class App extends Component {
         <span>Size</span>
         <input type="range" min="100" max="300" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
         <span>Background</span>
-        <TwitterPicker color={ this.state.bg } onChangeComplete={ this.bgChanged.bind(this) }/>
+        <TwitterPicker colors = {colors}  color={ this.state.bg || "#FFFFFF" } onChange={ this.bgChanged.bind(this) }/>
         <span>Foreground</span>
-        <TwitterPicker color={ this.state.fg } onChangeComplete={ this.fgChanged.bind(this) }/>
+        <TwitterPicker colors = {colors} color={ this.state.fg || "#FFFFFF"} onChange={ this.fgChanged.bind(this) }/>
         <span>Palette</span>
         <select onChange={(evt)=>this.paletteChanged(evt)} value={this.state.palettechoice}>
           <option value={0}>No palette</option>
@@ -62,7 +67,7 @@ class App extends Component {
        </select>
         </div>
         <div className="main">
-          <Identicon palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string}className="id"/>
+          <Identicon getColor = {this.getColor.bind(this)} palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
         </div>
     </div>
     );
@@ -71,7 +76,7 @@ class App extends Component {
 
 export default App;
 
-
+let colors = ['#FFFFFF','#000000','#FF6900', '#FCB900', '#00D084', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF']
 
 let palettes = [
   [],
