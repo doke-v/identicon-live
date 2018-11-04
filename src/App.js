@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Identicon from 'react-identicons';
-import Input from './components/Input';
 import {TwitterPicker } from 'react-color';
 
 
 class App extends Component {
-  state = {padding: 1, size: 200, fg: null}
-  inputChanged(string){
-    this.setState({string})
+  state = {padding: 1, size: 200, fg: null, string: ""}
+
+  inputChanged(evt){
+    console.log(evt.target.value)
+    this.setState({string: evt.target.value})
   }
   paddingChanged(evt){
     let padding = parseInt(evt.target.value)
@@ -35,6 +36,12 @@ class App extends Component {
   } 
   reset(){
     this.setState({string: "", padding: 1, size: 200, fg: null, bg: "#FFFFFF", palette: [], palettechoice: 0})
+  }
+  getColor(color){
+
+    if(this.state.hashcolor !== color) {
+      this.setState({hashcolor: color})
+    }
     
   }
   render() {
@@ -47,30 +54,29 @@ class App extends Component {
         </div>
         
         <div className="controls">
-        <span>Text</span>
-        <Input value={this.state.string} callback={this.inputChanged.bind(this)}/>
-        <span>Padding</span>
-        <input type="range" min="0" max="10" value={this.state.padding} onChange={(evt)=>this.paddingChanged(evt)}/>
-        <span>Size</span>
-        <input type="range" min="100" max="300" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
-        <span>Background blocks</span>
-        <TwitterPicker colors = {colors}  color={ this.state.bg || "#FFFFFF" } onChange={ this.bgChanged.bind(this) }/>
-        <span>Foreground blocks</span>
-        <TwitterPicker colors = {colors} color={ this.state.fg || "#FFFFFF"} onChange={ this.fgChanged.bind(this) }/>
-        <span>Palette</span>
-        <select onChange={(evt)=>this.paletteChanged(evt)} value={this.state.palettechoice}>
-          <option value={0}>No palette</option>
-          <option value={1}>Pink</option>
-          <option value={2}>Lime</option>
-          <option value={3}>Blue</option>
-          <option value={4}>Grayscale</option>
-       </select>
-       <span>Reset</span>
-       <button type="button" onClick={this.reset.bind(this)}>Reset!</button>
-     
+            <span>Text</span>
+            <input className = "input" type="text" value ={this.state.string} onChange={(evt)=>this.inputChanged(evt)}></input>
+            <span>Padding</span>
+            <input type="range" min="0" max="10" value={this.state.padding} onChange={(evt)=>this.paddingChanged(evt)}/>
+            <span>Size</span>
+            <input type="range" min="100" max="300" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
+            <span>Background blocks</span>
+            <TwitterPicker colors = {colors}  color= {this.state.bg || "#FFFFFF" } onChange={ this.bgChanged.bind(this) }/>
+            <span>Foreground blocks</span>
+            <TwitterPicker colors = {colors} color= {this.state.fg || this.state.hashcolor} onChange={ this.fgChanged.bind(this) }/>
+            <span>Palette</span>
+            <select onChange={(evt)=>this.paletteChanged(evt)} value={this.state.palettechoice}>
+              <option value={0}>No palette</option>
+              <option value={1}>Pink</option>
+              <option value={2}>Lime</option>
+              <option value={3}>Blue</option>
+              <option value={4}>Grayscale</option>
+          </select>
+          <span>Reset</span>
+          <button type="button" onClick={this.reset.bind(this)}>Reset!</button>
         </div>
         <div className="main">
-          <Identicon palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
+          <Identicon getColor={this.getColor.bind(this)} palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
         </div>
     </div>
     );
