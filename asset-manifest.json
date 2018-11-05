@@ -1,13 +1,13 @@
 {
-  "main.css": "./static/css/main.0b7f8f56.chunk.css",
-  "main.js": "./static/js/main.50714679.chunk.js",
-  "main.js.map": "./static/js/main.50714679.chunk.js.map",
-  "static/js/1.c6a306b0.chunk.js": "./static/js/1.c6a306b0.chunk.js",
-  "static/js/1.c6a306b0.chunk.js.map": "./static/js/1.c6a306b0.chunk.js.map",
-  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
-  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
-  "static/css/main.0b7f8f56.chunk.css.map": "./static/css/main.0b7f8f56.chunk.css.map",
-  "index.html": "./index.html",
-  "precache-manifest.281821fae9827abd69f3106279800d8f.js": "./precache-manifest.281821fae9827abd69f3106279800d8f.js",
-  "service-worker.js": "./service-worker.js"
+  "main.css": "/identicon-live/static/css/main.65e2712a.chunk.css",
+  "main.js": "/identicon-live/static/js/main.979be1ce.chunk.js",
+  "main.js.map": "/identicon-live/static/js/main.979be1ce.chunk.js.map",
+  "static/js/1.c6a306b0.chunk.js": "/identicon-live/static/js/1.c6a306b0.chunk.js",
+  "static/js/1.c6a306b0.chunk.js.map": "/identicon-live/static/js/1.c6a306b0.chunk.js.map",
+  "runtime~main.js": "/identicon-live/static/js/runtime~main.c20c15d8.js",
+  "runtime~main.js.map": "/identicon-live/static/js/runtime~main.c20c15d8.js.map",
+  "static/css/main.65e2712a.chunk.css.map": "/identicon-live/static/css/main.65e2712a.chunk.css.map",
+  "index.html": "/identicon-live/index.html",
+  "precache-manifest.df86ff64676f3ec15a28e12e27d601cd.js": "/identicon-live/precache-manifest.df86ff64676f3ec15a28e12e27d601cd.js",
+  "service-worker.js": "/identicon-live/service-worker.js"
 }
