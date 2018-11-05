@@ -8,25 +8,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
 .wrapper {
   max-width: 1000px;
   margin: auto;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: 
+  grid-template-areas:
   "header header"
   "controls main"
-
 }
-
 .header {
   grid-area: header;
   padding-bottom: 20px;
@@ -52,21 +47,21 @@ code {
   display: flex;
   background: #EEE;
   flex-direction: column;
+  box-shadow: 2px 2px 3px #bababa;
 }
-
 .controls > span {
   margin: 1em 0;
   font-weight: 700;
 }
-
 .wrapper > div {
   padding: 1em;
 }
-
-
+.controls button {
+  margin-bottom: 1em;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .wrapper {
-    grid-template-areas: 
+    grid-template-areas:
     "header header"
     "main main"
     "controls controls"
@@ -77,7 +72,6 @@ code {
   .controls {
     margin: 1em;
   }
-
   .id {
     display: flex;
     margin: auto;

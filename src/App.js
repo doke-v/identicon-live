@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Identicon from 'react-identicons';
-import {TwitterPicker } from 'react-color';
-
-
+import { TwitterPicker } from 'react-color';
 class App extends Component {
   state = {padding: 1, size: 200, fg: null, string: ""}
-
   inputChanged(evt){
-    console.log(evt.target.value)
     this.setState({string: evt.target.value})
   }
   paddingChanged(evt){
@@ -18,31 +14,26 @@ class App extends Component {
     let size = parseInt(evt.target.value)
     this.setState({size})
   }
-
   bgChanged(color){
-    console.log(color)
     let bg = color.hex
     this.setState({bg})
-  } 
+  }
   fgChanged(color){
-    console.log(color)
     let fg = color.hex
     this.setState({fg, palettechoice: 0, palette: palettes[0]})
-  } 
+  }
   paletteChanged (evt){
     this.setState({palettechoice: evt.target.value}, ()=>{
       this.setState({palette: palettes[this.state.palettechoice], fg: ""})
     });
-  } 
+  }
   reset(){
     this.setState({string: "", padding: 1, size: 200, fg: null, bg: "#FFFFFF", palette: [], palettechoice: 0})
   }
   getColor(color){
-
     if(this.state.hashcolor !== color) {
       this.setState({hashcolor: color})
     }
-    
   }
   render() {
     return (
@@ -50,21 +41,20 @@ class App extends Component {
         <div className="header">
         <h2>react-identicons</h2>
         React component for generating identicons
-        <div className="version">v1.1.3</div>
+        <div className="version"> <a href = "https://www.npmjs.com/package/react-identicons"><img alt="get it from NPM"        src="https://img.shields.io/npm/v/react-identicons.svg"></img></a> </div>
         </div>
-        
         <div className="controls">
             <span>Text</span>
             <input className = "input" type="text" value ={this.state.string} onChange={(evt)=>this.inputChanged(evt)}></input>
-            <span>Padding</span>
+            <span>Padding: {this.state.padding}px</span>
             <input type="range" min="0" max="10" value={this.state.padding} onChange={(evt)=>this.paddingChanged(evt)}/>
-            <span>Size</span>
+            <span>Size: {this.state.size}px</span>
             <input type="range" min="100" max="300" value={this.state.size} onChange={(evt)=>this.sizeChanged(evt)}/>
             <span>Background blocks</span>
             <TwitterPicker colors = {colors}  color= {this.state.bg || "#FFFFFF" } onChange={ this.bgChanged.bind(this) }/>
             <span>Foreground blocks</span>
             <TwitterPicker colors = {colors} color= {this.state.fg || this.state.hashcolor} onChange={ this.fgChanged.bind(this) }/>
-            <span>Palette</span>
+            <span>Foreground palette</span>
             <select onChange={(evt)=>this.paletteChanged(evt)} value={this.state.palettechoice}>
               <option value={0}>No palette</option>
               <option value={1}>Pink</option>
@@ -72,8 +62,8 @@ class App extends Component {
               <option value={3}>Blue</option>
               <option value={4}>Grayscale</option>
           </select>
-          <span>Reset</span>
-          <button type="button" onClick={this.reset.bind(this)}>Reset!</button>
+          <span>Reset to defaults</span>
+          <button type="button" onClick={this.reset.bind(this)}>Reset</button>
         </div>
         <div className="main">
           <Identicon getColor={this.getColor.bind(this)} palette = {this.state.palette} fg = {this.state.fg} bg = {this.state.bg} padding={this.state.padding} size={this.state.size} string={this.state.string} className="id"/>
@@ -82,11 +72,8 @@ class App extends Component {
     );
   }
 }
-
 export default App;
-
 let colors = ['#FFFFFF','#000000','#FF6900', '#FCB900', '#00D084', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF']
-
 let palettes = [
   [],
   ["#fce4ec", "#f8bbd0", "#f48fb1", "#f06292", "#ec407a", "#e91e63", "#d81b60", "#c2185b", "#ad1457", "#880e4f", "#ff80ab", "#ff4081", "#f50057", "#c51162"],
