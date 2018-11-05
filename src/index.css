@@ -69,6 +69,10 @@ code {
   .main {
     height: initial;
   }
+  .version {
+    top: 0;
+    bottom: initial;
+  }
   .controls {
     margin: 1em;
   }
