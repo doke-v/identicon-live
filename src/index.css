@@ -81,3 +81,8 @@ code {
     margin: auto;
   }
   }
+
+  div.controls div > span:nth-child(1) > div {
+    box-sizing: border-box;
+    border: 1px solid #e4e4e4;
+}
