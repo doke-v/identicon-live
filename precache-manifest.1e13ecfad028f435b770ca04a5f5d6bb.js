@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/identicon-live/static/js/runtime~main.c20c15d8.js"
   },
   {
-    "revision": "979be1ce7a688ca963b1",
-    "url": "/identicon-live/static/js/main.979be1ce.chunk.js"
+    "revision": "0cb744260611c9cdd2e1",
+    "url": "/identicon-live/static/js/main.0cb74426.chunk.js"
   },
   {
     "revision": "c6a306b0337745fde14a",
     "url": "/identicon-live/static/js/1.c6a306b0.chunk.js"
   },
   {
-    "revision": "979be1ce7a688ca963b1",
-    "url": "/identicon-live/static/css/main.65e2712a.chunk.css"
+    "revision": "0cb744260611c9cdd2e1",
+    "url": "/identicon-live/static/css/main.3403fb00.chunk.css"
   },
   {
-    "revision": "964aa0216f91a24cb8aadd5b5826b6e9",
+    "revision": "e6155b620314e8584084da640f9312e0",
     "url": "/identicon-live/index.html"
   }
 ];

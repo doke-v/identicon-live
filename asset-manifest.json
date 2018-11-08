@@ -1,13 +1,13 @@
 {
-  "main.css": "/identicon-live/static/css/main.65e2712a.chunk.css",
-  "main.js": "/identicon-live/static/js/main.979be1ce.chunk.js",
-  "main.js.map": "/identicon-live/static/js/main.979be1ce.chunk.js.map",
+  "main.css": "/identicon-live/static/css/main.3403fb00.chunk.css",
+  "main.js": "/identicon-live/static/js/main.0cb74426.chunk.js",
+  "main.js.map": "/identicon-live/static/js/main.0cb74426.chunk.js.map",
   "static/js/1.c6a306b0.chunk.js": "/identicon-live/static/js/1.c6a306b0.chunk.js",
   "static/js/1.c6a306b0.chunk.js.map": "/identicon-live/static/js/1.c6a306b0.chunk.js.map",
   "runtime~main.js": "/identicon-live/static/js/runtime~main.c20c15d8.js",
   "runtime~main.js.map": "/identicon-live/static/js/runtime~main.c20c15d8.js.map",
-  "static/css/main.65e2712a.chunk.css.map": "/identicon-live/static/css/main.65e2712a.chunk.css.map",
+  "static/css/main.3403fb00.chunk.css.map": "/identicon-live/static/css/main.3403fb00.chunk.css.map",
   "index.html": "/identicon-live/index.html",
-  "precache-manifest.df86ff64676f3ec15a28e12e27d601cd.js": "/identicon-live/precache-manifest.df86ff64676f3ec15a28e12e27d601cd.js",
+  "precache-manifest.1e13ecfad028f435b770ca04a5f5d6bb.js": "/identicon-live/precache-manifest.1e13ecfad028f435b770ca04a5f5d6bb.js",
   "service-worker.js": "/identicon-live/service-worker.js"
 }
